@@ -1,0 +1,101 @@
+---
+title: "Reproducibility Report for Acute Psychosocial Stress Increases Cognitive-Effort Avoidance by Bogdanov, et al. (2021, Psychological Science)"
+author: "Kendall Parks (kcparks@stanford.edu)"
+date: "`r format(Sys.time(), '%B %d, %Y')`"
+output:
+  html_document:
+    toc: yes
+    toc_depth: 3
+    toc_float:
+      collapsed: false
+---
+
+<!-- Reproducibility reports should all use this template to standardize reporting across projects. These reports will be public supplementary materials that accompany the summary report(s) of the aggregate results. -->
+
+## Introduction
+
+In this current research article, Bogdanov, et al. explore and compare paradigms on how acute stress impairs central executive-dependent cognitive control processes. Utilizing physiological measures and demand-selection at differentiating levels, cognitive-effort avoidance was assessed as more effortful and verily decreases motivation when switching tasks. This is important as it offers insight on how acute psychosocial stress, rather than cognitive ability, can shape behavior to reduce engagement in effortful performances and subsequently, lifestyle choices.
+
+As shown in the original paper, this reproducibility study should provide confirming evidence that participants preferred less demanding behavior when under acute stress in comparison to task-switching performances. 
+
+**Clarify key analysis of interest here**  
+
+I have yet to utilize Bayesian and multivariate analyses in order to make statistical inferences, and look forward to learning these new skills and honing them for my future research.
+
+### Justification for choice of study
+
+My research area of interest is adversity and perceived stress, and how they affect cognition as well as biological markers. I am interested in this study since it includes physiological and psychological measures to generate a comprehensive assessment of the cognitive-control paradigm for stress. I also plan to use the Trier Social Stress Test in my own research study for my first-year project. Learning more about this measure will equip me with computational tools needed for my area of interest.
+
+### Anticipated challenges
+
+I may run into a challenge with analysis of the physiological measures since I have no previous training. I also anticipate that these more advanced statistical analyses may be challenging to compute on my own in order to reproduce the same results. 
+
+### Links
+
+Project repository (on Github): https://github.com/psych251/bogdanov_2021.git
+
+Original paper (as hosted in your repo): https://github.com/psych251/bogdanov_2021/blob/main/original_paper.pdf
+
+## Methods
+
+### Description of the steps required to reproduce the results
+
+1.	Identify open data from study in OSF (https://osf.io/26w4u/)
+2.	Enter data into R using the appropriate code and lme4 package 
+3.	Complete additional Bayesian and multivariate analyses
+4.	Reproduce the tables and figures from original article  
+5.	Compare results with original article 
+
+### Differences from original study
+
+No differences for original study.
+
+## Project Progress Check 1
+
+### Measure of success
+
+Please describe the outcome measure for the success or failure of your reproduction and how this outcome will be computed.
+
+
+### Pipeline progress
+
+Earlier in this report, you described the steps necessary to reproduce the key result(s) of this study. Please describe your progress on each of these steps (e.g., data preprocessing, model fitting, model evaluation).
+
+
+## Results
+
+### Data preparation
+
+Data preparation following the analysis plan.
+	
+```{r include=F}
+### Data Preparation
+
+#### Load Relevant Libraries and Functions
+
+#### Import data
+
+#### Data exclusion / filtering
+
+#### Prepare data for analysis - create columns etc.
+```
+
+### Key analysis
+
+The analyses as specified in the analysis plan.  
+
+*Side-by-side graph with original graph is ideal here*
+
+###Exploratory analyses
+
+Any follow-up analyses desired (not required).  
+
+## Discussion
+
+### Summary of Reproduction Attempt
+
+Open the discussion section with a paragraph summarizing the primary result from the key analysis and assess whether you successfully reproduced it, partially reproduced it, or failed to reproduce it.  
+
+### Commentary
+
+Add open-ended commentary (if any) reflecting (a) insights from follow-up exploratory analysis of the dataset, (b) assessment of the meaning of the successful or unsuccessful reproducibility attempt - e.g., for a failure to reproduce the original findings, are the differences between original and present analyses ones that definitely, plausibly, or are unlikely to have been moderators of the result, and (c) discussion of any objections or challenges raised by the current and original authors about the reproducibility attempt (if you contacted them).  None of these need to be long.

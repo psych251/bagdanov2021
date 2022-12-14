@@ -14,7 +14,7 @@ output:
 
 ## Introduction
 
-In this current research article, Bogdanov, et al. (2021) explores and compares paradigms on how acute stress impairs central executive-dependent cognitive control processes. Utilizing physiological and subjective measures and demand-selection at differentiating levels, cognitive-effort avoidance was assessed as more effortful and verily decreases motivation when switching between tasks. Cognitive performance defined as a combination of two factors: 1. processing ability, and 2. the decision on how much cognitive effort people want to expend. A cost-benefit analysis is involved in the latter decision-making, comparing how demanding a task would be for top-down processes versus the anticipated benefits for acting on a task. 
+In this current research article, Bogdanov, et al. (2021) explores and compares paradigms on how acute stress impairs central executive-dependent cognitive control processes. Utilizing physiological and subjective measures and demand-selection at differentiating levels, cognitive-effort avoidance was assessed as more effortful and verily decreases motivation when switching between tasks. Cognitive performance defined as a combination of two factors: 1) processing ability, and 2) the decision on how much cognitive effort people want to expend. A cost-benefit analysis is involved in the latter decision-making, comparing how demanding a task would be for top-down processes versus the anticipated benefits for acting on a task. 
 
 In a 2-day crossover within-subject study, the Bogdanov and colleagues tested if acute psychosocial stress would diminish participant motivation to use cognitive effort, and their preference for lower-demanding tasks. This is important as it offers insight on how stress, rather than cognitive ability, can shape behavior to reduce engagement in effortful performances. Instead, stress can influence and shape behaviors by modulating people's motivation to expend cognitive control.
 
@@ -93,7 +93,7 @@ str(bogdanovtidy[,c(1:10)]) #to check if .CSV data has been read as integers or 
 
 #### Prepare data for analysis - create columns etc.
 
-bogdanovtidy$TSST_difficult_control <- as.numeric(as.factor(bogdanovtidy$TSST_difficult_control))
+bogdanovtidy$TSST_difficult_control <- as.numeric(as.factor(bogdanovtidy$TSST_difficult_control)) #to change variables in number values
 bogdanovtidy$TSST_unpleasant_control <- as.numeric(as.factor(bogdanovtidy$TSST_unpleasant_control))
 bogdanovtidy$TSST_stressful_control <- as.numeric(as.factor(bogdanovtidy$TSST_stressful_control))
 
@@ -117,7 +117,7 @@ colnames(DST_data) #to see column names
 
 #### Data exclusion / filtering
 
-str(DST_data[,c(1:10)]) #to check if .CSV data has been read as boolean (T/F), intergers or characters 
+str(DST_data[,c(1:10)]) #to check if .CSV data has been read as boolean (True/False), intergers or characters 
 
 #### Prepare data for analysis - create columns etc.
 
@@ -125,14 +125,14 @@ str(DST_data[,c(1:10)]) #to check if .CSV data has been read as boolean (T/F), i
 DSTeffort <- DST_data |>
   group_by(condition,effort_choice) |> 
  summarize(cnt = n()) |>
-  mutate(freq = round(cnt / sum(cnt), 3)*100) |> #to change rates into percentage
-  mutate(percentage = freq)
+  mutate(freq = round(cnt / sum(cnt), 3)*100) |> #to create new column with changed rates into percentages
+  mutate(percentage = freq) #create new column called percentages 
 DSTeffort
 
 DSTeffort2 <- DSTeffort[-c(4)] #remove freq column
 
-LowDemandDST <- DSTeffort2 |> #only include low-demand choices ("1")
-  filter(effort_choice == 1)
+LowDemandDST <- DSTeffort2 |> 
+  filter(effort_choice == 1) #only include low-demand choices ("1")
 
 LowDemandDST
 
@@ -179,7 +179,7 @@ This is Figure 3A from the original paper by Bogdanov et al. (2021). The figure 
 
 ```{r}
 library(knitr)
-knitr::include_graphics("bogdanov_fig3.png")
+knitr::include_graphics("bogdanov_fig3.png") #to insert image from original paper
 ```
 
 \textfloatsep
@@ -188,11 +188,11 @@ This is a reproduction of Figure 3A.
 ##Reproduced bar graph for Figure 3: low-demand choices in both stress and control conditions
 ggpLD <- ggplot(data = LowDemandDST, aes(x=condition, y = percentage, fill=condition)) +
   geom_bar(stat = "identity")+
-  coord_cartesian(ylim=c(40,80)) +
-  scale_y_continuous(breaks= (seq(40,80, by = 10))) +
- labs(x="Condition", y="Low-Demand Choices (%)", title = "Percentage of Low-Demand Choices Across Trials") +
-  theme(plot.title = element_text(hjust = 0.5), legend.position = "none") +
-  scale_x_discrete(labels = c("Control", "Stress"))
+  coord_cartesian(ylim=c(40,80)) + #to set y-axis limits
+  scale_y_continuous(breaks= (seq(40,80, by = 10))) + #to add breaks within y-axis by increments of 10
+ labs(x="Condition", y="Low-Demand Choices (%)", title = "Percentage of Low-Demand Choices Across Trials") + #to update main labels
+  theme(plot.title = element_text(hjust = 0.5), legend.position = "none") + #to adjust title spacing
+  scale_x_discrete(labels = c("Control", "Stress")) #to add smaller x-axis labels  for conditions
 ggpLD
 ```
 

@@ -181,6 +181,8 @@ This is Figure 3A from the original paper by Bogdanov et al. (2021). The figure 
 library(knitr)
 knitr::include_graphics("bogdanov_fig3.png")
 ```
+
+\textfloatsep
 This is a reproduction of Figure 3A.
 ```{r}
 ##Reproduced bar graph for Figure 3: low-demand choices in both stress and control conditions

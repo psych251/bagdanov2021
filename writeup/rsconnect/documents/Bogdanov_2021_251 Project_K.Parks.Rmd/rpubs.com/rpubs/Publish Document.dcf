@@ -1,0 +1,11 @@
+name: Publish Document
+title:
+username:
+account: rpubs
+server: rpubs.com
+hostUrl: rpubs.com
+appId: https://api.rpubs.com/api/v1/document/983677/3f840345be7140bfaaff9ec1b7a9e3f2
+bundleId: https://api.rpubs.com/api/v1/document/983677/3f840345be7140bfaaff9ec1b7a9e3f2
+url: http://rpubs.com/kcparks9/983677/edit
+when: 1671019926.42428
+lastSyncTime: 1671019926.42431
